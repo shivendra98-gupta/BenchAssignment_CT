@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="SauceDemo Smoke Test Suite" verbose="2">
+    <listeners>
+        <listener class-name="com.saucedemo.listeners.TestListener"/>
+    </listeners>
+
+    <test name="Smoke Checkout Flow Tests">
+        <classes>
+            <class name="com.saucedemo.tests.LoginTest">
+                <methods>
+                    <include name="testValidLogin"/>
+                </methods>
+            </class>
+            <class name="com.saucedemo.tests.EndToEndCheckoutTest">
+                <methods>
+                    <include name="testCompleteCheckoutFlowSingleItem"/>
+                </methods>
+            </class>
+            <class name="com.saucedemo.tests.PDFConfirmationTest"/>
+        </classes>
+    </test>
+</suite>
